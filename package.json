@@ -6,9 +6,12 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "@ndarilek/janus": "^0.5.1",
     "react": "16.0.0-alpha.6",
     "react-native": "^0.44.0",
+    "react-native-callkit": "^1.3.0",
     "react-native-webrtc": "git+https://git@github.com/oney/react-native-webrtc.git",
-    "socket.io-client": "^1.3.7"
+    "socket.io-client": "^1.3.7",
+    "uuid": "^3.1.0"
   }
 }
