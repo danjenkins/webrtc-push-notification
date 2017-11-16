@@ -265,14 +265,15 @@ const RCTWebRTCDemo = React.createClass({
 
     NotificationsIOS.addEventListener('remoteNotificationsRegistered', that.onPushRegistered);
 		NotificationsIOS.addEventListener('remoteNotificationsRegistrationFailed', that.onPushRegistrationFailed);
+    NotificationsIOS.addEventListener('pushKitRegistered', that.onPushKitRegistered);
+
+    NotificationsIOS.requestPermissions();
+    NotificationsIOS.registerPushKit();
 
     NotificationsIOS.addEventListener('notificationReceivedForeground', that.onNotificationReceivedForeground);
     NotificationsIOS.addEventListener('notificationReceivedBackground', that.onNotificationReceivedBackground);
     NotificationsIOS.addEventListener('notificationOpened', that.onNotificationOpened);
 
-    NotificationsIOS.addEventListener('pushKitRegistered', that.onPushKitRegistered);
-    NotificationsIOS.requestPermissions();
-    NotificationsIOS.registerPushKit();
 
     // Add RNCallKit Events
     RNCallKit.addEventListener('answerCall', that.onRNCallKitPerformAnswerCallAction);
@@ -316,26 +317,19 @@ const RCTWebRTCDemo = React.createClass({
 		console.error("PushRegistration Fails", error);
 	},
   onNotificationReceivedForeground: function(notification) {
-    console.log("Notification Received - Foreground");
-	  // console.log("Notification Received - Foreground", notification);
-    // console.log("voipDeviceToken: ", voipDeviceToken);
-    // this.onIncomingCall(voipDeviceToken);
+	  console.log("Notification Received - Foreground", notification);
+    this.onIncomingCall(voipDeviceToken);
   },
   onNotificationReceivedBackground: function(notification) {
-    console.log("Notification Received - Foreground");
-  	// console.log("Notification Received - Background", notification);
-    // console.log("voipDeviceToken: ", voipDeviceToken);
-    // this.onIncomingCall(voipDeviceToken);
+  	console.log("Notification Received - Background", notification);
+    this.onIncomingCall(voipDeviceToken);
   },
   onNotificationOpened: function(notification) {
   	console.log("Notification opened by device user", notification);
-    console.log("voipDeviceToken: ", voipDeviceToken);
-    this.onIncomingCall(voipDeviceToken);
   },
   onPushKitRegistered: function(deviceToken) {
     console.log("PushKit Token Received: " + deviceToken);
-    // voipDeviceToken = deviceToken;
-    // this.onIncomingCall(deviceToken);
+    voipDeviceToken = deviceToken;
   },
   onRNCallKitPerformAnswerCallAction(data) {
     /* You will get this event when the user answer the incoming call
