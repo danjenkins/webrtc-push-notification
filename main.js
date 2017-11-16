@@ -27,10 +27,9 @@ import {
 } from 'react-native-webrtc';
 
 import RNCallKit from 'react-native-callkit';
+import NotificationsIOS from 'react-native-notifications';
 
 import uuid from 'uuid';
-
-import { SIPml } from 'SIPml-api';
 
 const configuration = {"iceServers": [{"url": "stun:stun.l.google.com:19302"}]};
 
@@ -248,27 +247,41 @@ function getStats() {
 }
 
 let container;
+let voipDeviceToken;
 
 const RCTWebRTCDemo = React.createClass({
   getInitialState: function() {
-    // Initialise RNCallKit
+    //Initialise RNCallKit
     let options = {
-        appName: 'RNCallKitExample',
-        imageName: 'my_image_name_in_bundle',
-        ringtoneSound: 'my_ringtone_sound_filename_in_bundle',
+        appName: 'RNCallKitExample'
     };
     try {
         RNCallKit.setup(options);
+        console.log("Callkit setup: ", RNCallKit);
     } catch (err) {
         console.log('error:', err.message);
     }
     let that = this;
+
+    NotificationsIOS.addEventListener('remoteNotificationsRegistered', that.onPushRegistered);
+		NotificationsIOS.addEventListener('remoteNotificationsRegistrationFailed', that.onPushRegistrationFailed);
+
+    NotificationsIOS.addEventListener('notificationReceivedForeground', that.onNotificationReceivedForeground);
+    NotificationsIOS.addEventListener('notificationReceivedBackground', that.onNotificationReceivedBackground);
+    NotificationsIOS.addEventListener('notificationOpened', that.onNotificationOpened);
+
+    NotificationsIOS.addEventListener('pushKitRegistered', that.onPushKitRegistered);
+    NotificationsIOS.requestPermissions();
+    NotificationsIOS.registerPushKit();
+
     // Add RNCallKit Events
-    RNCallKit.addEventListener('didReceiveStartCallAction', that.onRNCallKitDidReceiveStartCallAction);
     RNCallKit.addEventListener('answerCall', that.onRNCallKitPerformAnswerCallAction);
     RNCallKit.addEventListener('endCall', that.onRNCallKitPerformEndCallAction);
     RNCallKit.addEventListener('didActivateAudioSession', that.onRNCallKitDidActivateAudioSession);
+
     this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => true});
+
+
     return {
       info: 'Initializing',
       status: 'init',
@@ -284,18 +297,46 @@ const RCTWebRTCDemo = React.createClass({
   componentDidMount: function() {
     container = this;
   },
-  onRNCallKitDidReceiveStartCallAction(data) {
-    /*
-     * Your normal start call action
-     *
-     * ...
-     *
-     */
+	componentWillUnmount: function() {
+  	// prevent memory leaks!
+    let that = this;
+  	NotificationsIOS.removeEventListener('remoteNotificationsRegistered', that.onPushRegistered);
+		NotificationsIOS.removeEventListener('remoteNotificationsRegistrationFailed', that.onPushRegistrationFailed);
 
-    let _uuid = uuid.v4();
-    RNCallKit.startCall(_uuid, data.handle);
+    NotificationsIOS.removeEventListener('notificationReceivedForeground', that.onNotificationReceivedForeground);
+  	NotificationsIOS.removeEventListener('notificationReceivedBackground', that.onNotificationReceivedBackground);
+  	NotificationsIOS.removeEventListener('notificationOpened', that.onNotificationOpened);
+    NotificationsIOS.removeEventListener('pushKitRegistered', onPushKitRegistered(this));
+	},
+  onPushRegistered: function(deviceToken) {
+	    // TODO: Send the token to my server so it could send back push notifications...
+		console.log("Device Token Received", deviceToken);
+	},
+  onPushRegistrationFailed: function(error) {
+		console.error("PushRegistration Fails", error);
+	},
+  onNotificationReceivedForeground: function(notification) {
+    console.log("Notification Received - Foreground");
+	  // console.log("Notification Received - Foreground", notification);
+    // console.log("voipDeviceToken: ", voipDeviceToken);
+    // this.onIncomingCall(voipDeviceToken);
   },
-
+  onNotificationReceivedBackground: function(notification) {
+    console.log("Notification Received - Foreground");
+  	// console.log("Notification Received - Background", notification);
+    // console.log("voipDeviceToken: ", voipDeviceToken);
+    // this.onIncomingCall(voipDeviceToken);
+  },
+  onNotificationOpened: function(notification) {
+  	console.log("Notification opened by device user", notification);
+    console.log("voipDeviceToken: ", voipDeviceToken);
+    this.onIncomingCall(voipDeviceToken);
+  },
+  onPushKitRegistered: function(deviceToken) {
+    console.log("PushKit Token Received: " + deviceToken);
+    // voipDeviceToken = deviceToken;
+    // this.onIncomingCall(deviceToken);
+  },
   onRNCallKitPerformAnswerCallAction(data) {
     /* You will get this event when the user answer the incoming call
      *
@@ -304,7 +345,6 @@ const RCTWebRTCDemo = React.createClass({
      * e.g. this.handleAnswerCall(data.callUUID);
      */
   },
-
   onRNCallKitPerformEndCallAction(data) {
     /* You will get this event when the user finish the incoming/outgoing call
      *
@@ -313,7 +353,6 @@ const RCTWebRTCDemo = React.createClass({
      * e.g. this.handleHangUpCall(data.callUUID);
      */
   },
-
   onRNCallKitDidActivateAudioSession(data) {
     /* You will get this event when the the AudioSession has been activated by **RNCallKit**,
      * you might want to do following things when receiving this event:
@@ -321,29 +360,18 @@ const RCTWebRTCDemo = React.createClass({
      * - Start playing ringback if it is an outgoing call
      */
   },
-
-  // This is a fake function where you can receive incoming call notifications
-  onIncomingCall() {
+  onIncomingCall(token) {
     // Store the generated uuid somewhere
     // You will need this when calling RNCallKit.endCall()
     let _uuid = uuid.v4();
-    RNCallKit.displayIncomingCall(_uuid, "886900000000")
+    console.log("uuid: ", _uuid);
+    RNCallKit.displayIncomingCall(_uuid, token);
   },
-
-  // This is a fake function where you make outgoing calls
-  onOutgoingCall() {
-    // Store the generated uuid somewhere
-    // You will need this when calling RNCallKit.endCall()
-    let _uuid = uuid.v4();
-    RNCallKit.startCall(_uuid, "886900000000")
-  },
-
   // This is a fake function where you hang up calls
   onHangUpCall() {
     // get the _uuid you stored earlier
     RNCallKit.endCall(_uuid)
   },
-
   _press(event) {
     this.refs.roomID.blur();
     this.setState({status: 'connect', info: 'Connecting'});
@@ -443,6 +471,10 @@ const RCTWebRTCDemo = React.createClass({
             return <RTCView key={index} streamURL={remote} style={styles.remoteView}/>
           })
         }
+        <TouchableHighlight
+          onPress={this.onIncomingCall}>
+          <Text>Display Call</Text>
+        </TouchableHighlight>
       </View>
     );
   }

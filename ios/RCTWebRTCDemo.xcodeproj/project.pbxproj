@@ -22,9 +22,12 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		35CF3F5CE51FF8E906D2FD8F /* libPods-RCTWebRTCDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE808EF59BAC3B0ED7553B2 /* libPods-RCTWebRTCDemoTests.a */; };
 		35FFE7141D88B9E50080122D /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FFE7131D88B9E50080122D /* WebRTC.framework */; };
 		35FFE7151D88B9EC0080122D /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35FFE7131D88B9E50080122D /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		78AB1FA647E844BFBA2FC7C7 /* libRNCallKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A46C79B064AB454FA489F95B /* libRNCallKit.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		A0A82271500D215C21DC667E /* libPods-RCTWebRTCDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F35559C3C7CA368C515164D /* libPods-RCTWebRTCDemo.a */; };
 		BF772BC71D2E502A00C3B0A8 /* libRCTWebRTC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF772BC41D2E500700C3B0A8 /* libRCTWebRTC.a */; };
 		BF772BC91D2E503700C3B0A8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF772BC81D2E503700C3B0A8 /* AVFoundation.framework */; };
 		BF772BCB1D2E504D00C3B0A8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF772BCA1D2E504D00C3B0A8 /* AudioToolbox.framework */; };
@@ -36,6 +39,12 @@
 		BF772BD71D2E507600C3B0A8 /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF772BD61D2E507600C3B0A8 /* libc.tbd */; };
 		BF772BD91D2E507E00C3B0A8 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF772BD81D2E507E00C3B0A8 /* libsqlite3.tbd */; };
 		BF772BDB1D2E508500C3B0A8 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF772BDA1D2E508500C3B0A8 /* libstdc++.tbd */; };
+		CD0EE45F1FB5C1FD001F7FDF /* libRNNotifications.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0EE45E1FB5C1EB001F7FDF /* libRNNotifications.a */; };
+		CD0EE4661FB5F853001F7FDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD0EE4651FB5F853001F7FDF /* GoogleService-Info.plist */; };
+		CD0EE4671FB5F853001F7FDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD0EE4651FB5F853001F7FDF /* GoogleService-Info.plist */; };
+		CD44F2171FB5FD8E003CD4BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD44F2161FB5FD8E003CD4BB /* GoogleService-Info.plist */; };
+		CDA411201F9647A200CF250A /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA4111F1F9647A200CF250A /* Intents.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		CDFE07791FBAE88200F2221C /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA410F41F96475000CF250A /* CallKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +223,20 @@
 			remoteGlobalIDString = 35A2221F1CB493700015FD5C;
 			remoteInfo = RCTWebRTC;
 		};
+		CD0EE45D1FB5C1EB001F7FDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD0EE4591FB5C1EB001F7FDF /* RNNotifications.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNNotifications;
+		};
+		CDFE075C1FBAE7EA00F2221C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B047770B0BD4243A2EDDE44 /* RNCallKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 234528921E0B88C700D1A033;
+			remoteInfo = RNCallKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -250,9 +273,17 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RCTWebRTCDemo/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RCTWebRTCDemo/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		1F35559C3C7CA368C515164D /* libPods-RCTWebRTCDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCTWebRTCDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35FFE7131D88B9E50080122D /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = "../node_modules/react-native-webrtc/ios/WebRTC.framework"; sourceTree = "<group>"; };
+		3B047770B0BD4243A2EDDE44 /* RNCallKit.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNCallKit.xcodeproj; path = "../node_modules/react-native-callkit/ios/RNCallKit.xcodeproj"; sourceTree = "<group>"; };
+		59036BE7F7945416EFACDF83 /* Pods-RCTWebRTCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCTWebRTCDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCTWebRTCDemo/Pods-RCTWebRTCDemo.release.xcconfig"; sourceTree = "<group>"; };
+		5AE808EF59BAC3B0ED7553B2 /* libPods-RCTWebRTCDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCTWebRTCDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		60E04051A966F990352AB0CE /* Pods-RCTWebRTCDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCTWebRTCDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCTWebRTCDemoTests/Pods-RCTWebRTCDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		7ADD6F8FCF5E75DD847D5AF1 /* Pods-RCTWebRTCDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCTWebRTCDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCTWebRTCDemoTests/Pods-RCTWebRTCDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		A46C79B064AB454FA489F95B /* libRNCallKit.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNCallKit.a; sourceTree = "<group>"; };
+		AB9E1A58367AFC430D0E39A7 /* Pods-RCTWebRTCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCTWebRTCDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCTWebRTCDemo/Pods-RCTWebRTCDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BF772BB51D2E500700C3B0A8 /* RCTWebRTC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebRTC.xcodeproj; path = "../node_modules/react-native-webrtc/ios/RCTWebRTC.xcodeproj"; sourceTree = "<group>"; };
 		BF772BC81D2E503700C3B0A8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BF772BCA1D2E504D00C3B0A8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -264,6 +295,12 @@
 		BF772BD61D2E507600C3B0A8 /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
 		BF772BD81D2E507E00C3B0A8 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		BF772BDA1D2E508500C3B0A8 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		CD0EE4591FB5C1EB001F7FDF /* RNNotifications.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNNotifications.xcodeproj; path = "../node_modules/react-native-notifications/RNNotifications/RNNotifications.xcodeproj"; sourceTree = "<group>"; };
+		CD0EE4601FB5D91C001F7FDF /* RCTWebRTCDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = RCTWebRTCDemo.entitlements; path = RCTWebRTCDemo/RCTWebRTCDemo.entitlements; sourceTree = "<group>"; };
+		CD0EE4651FB5F853001F7FDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CD44F2161FB5FD8E003CD4BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CDA410F41F96475000CF250A /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
+		CDA4111F1F9647A200CF250A /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
+				35CF3F5CE51FF8E906D2FD8F /* libPods-RCTWebRTCDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +317,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDFE07791FBAE88200F2221C /* CallKit.framework in Frameworks */,
+				CDA411201F9647A200CF250A /* Intents.framework in Frameworks */,
+				CD0EE45F1FB5C1FD001F7FDF /* libRNNotifications.a in Frameworks */,
 				BF772BDB1D2E508500C3B0A8 /* libstdc++.tbd in Frameworks */,
 				BF772BD91D2E507E00C3B0A8 /* libsqlite3.tbd in Frameworks */,
 				BF772BD71D2E507600C3B0A8 /* libc.tbd in Frameworks */,
@@ -301,6 +342,8 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				78AB1FA647E844BFBA2FC7C7 /* libRNCallKit.a in Frameworks */,
+				A0A82271500D215C21DC667E /* libPods-RCTWebRTCDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +430,7 @@
 		13B07FAE1A68108700A75B9A /* RCTWebRTCDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CD0EE4601FB5D91C001F7FDF /* RCTWebRTCDemo.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -394,6 +438,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				CD0EE4651FB5F853001F7FDF /* GoogleService-Info.plist */,
 			);
 			name = RCTWebRTCDemo;
 			sourceTree = "<group>";
@@ -425,6 +470,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				CD0EE4591FB5C1EB001F7FDF /* RNNotifications.xcodeproj */,
 				BF772BB51D2E500700C3B0A8 /* RCTWebRTC.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -436,6 +482,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+				3B047770B0BD4243A2EDDE44 /* RNCallKit.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -452,6 +499,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				CD44F2161FB5FD8E003CD4BB /* GoogleService-Info.plist */,
 				BF772BDA1D2E508500C3B0A8 /* libstdc++.tbd */,
 				BF772BD81D2E507E00C3B0A8 /* libsqlite3.tbd */,
 				BF772BD61D2E507600C3B0A8 /* libc.tbd */,
@@ -467,6 +515,9 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* RCTWebRTCDemoTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				CDA410F31F96475000CF250A /* Frameworks */,
+				CDA411011F96478300CF250A /* Recovered References */,
+				E77F9461E5E2945459403F21 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -489,6 +540,52 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		CD0EE45A1FB5C1EB001F7FDF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD0EE45E1FB5C1EB001F7FDF /* libRNNotifications.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDA410F31F96475000CF250A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDA4111F1F9647A200CF250A /* Intents.framework */,
+				CDA410F41F96475000CF250A /* CallKit.framework */,
+				1F35559C3C7CA368C515164D /* libPods-RCTWebRTCDemo.a */,
+				5AE808EF59BAC3B0ED7553B2 /* libPods-RCTWebRTCDemoTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDA411011F96478300CF250A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				A46C79B064AB454FA489F95B /* libRNCallKit.a */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		CDFE07411FBAE7EA00F2221C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDFE075D1FBAE7EA00F2221C /* libRNCallKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E77F9461E5E2945459403F21 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB9E1A58367AFC430D0E39A7 /* Pods-RCTWebRTCDemo.debug.xcconfig */,
+				59036BE7F7945416EFACDF83 /* Pods-RCTWebRTCDemo.release.xcconfig */,
+				60E04051A966F990352AB0CE /* Pods-RCTWebRTCDemoTests.debug.xcconfig */,
+				7ADD6F8FCF5E75DD847D5AF1 /* Pods-RCTWebRTCDemoTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -496,9 +593,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RCTWebRTCDemoTests" */;
 			buildPhases = (
+				2D999335FAE4A02415A95078 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				34C193804E1378FEE42943A3 /* [CP] Embed Pods Frameworks */,
+				67BA032989F3602F8C8F689A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -514,11 +614,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RCTWebRTCDemo" */;
 			buildPhases = (
+				08958B642C4EC0D447CA5CF7 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				35FFE7111D88B9850080122D /* Embed Frameworks */,
+				743834032D7E1529EA4C0297 /* [CP] Embed Pods Frameworks */,
+				EC2FFE56587C7F9FD4AF630E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -535,16 +638,28 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 5R9E5RQWT9;
+						DevelopmentTeam = EJR5WQYFKJ;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 5R9E5RQWT9;
+						DevelopmentTeam = EJR5WQYFKJ;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.HomeKit = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -603,6 +718,14 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = CDFE07411FBAE7EA00F2221C /* Products */;
+					ProjectRef = 3B047770B0BD4243A2EDDE44 /* RNCallKit.xcodeproj */;
+				},
+				{
+					ProductGroup = CD0EE45A1FB5C1EB001F7FDF /* Products */;
+					ProjectRef = CD0EE4591FB5C1EB001F7FDF /* RNNotifications.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -782,6 +905,20 @@
 			remoteRef = BF772BC31D2E500700C3B0A8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		CD0EE45E1FB5C1EB001F7FDF /* libRNNotifications.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNNotifications.a;
+			remoteRef = CD0EE45D1FB5C1EB001F7FDF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CDFE075D1FBAE7EA00F2221C /* libRNCallKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNCallKit.a;
+			remoteRef = CDFE075C1FBAE7EA00F2221C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -789,6 +926,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD0EE4671FB5F853001F7FDF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,7 +935,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				CD44F2171FB5FD8E003CD4BB /* GoogleService-Info.plist in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				CD0EE4661FB5F853001F7FDF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,6 +957,102 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
+		};
+		08958B642C4EC0D447CA5CF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RCTWebRTCDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D999335FAE4A02415A95078 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RCTWebRTCDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34C193804E1378FEE42943A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCTWebRTCDemoTests/Pods-RCTWebRTCDemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67BA032989F3602F8C8F689A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCTWebRTCDemoTests/Pods-RCTWebRTCDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		743834032D7E1529EA4C0297 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCTWebRTCDemo/Pods-RCTWebRTCDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC2FFE56587C7F9FD4AF630E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCTWebRTCDemo/Pods-RCTWebRTCDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -863,16 +1099,26 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60E04051A966F990352AB0CE /* Pods-RCTWebRTCDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 5R9E5RQWT9;
+				DEVELOPMENT_TEAM = EJR5WQYFKJ;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native/Libraries/PushNotificationIOS",
+					"$(SRCROOT)/../ios/Pods/**",
+					"$(SRCROOT)/../node_modules/react-native-callkit/ios/RNCallKit",
+				);
 				INFOPLIST_FILE = RCTWebRTCDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RCTWebRTCDemo.app/RCTWebRTCDemo";
 			};
@@ -880,13 +1126,23 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ADD6F8FCF5E75DD847D5AF1 /* Pods-RCTWebRTCDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 5R9E5RQWT9;
+				DEVELOPMENT_TEAM = EJR5WQYFKJ;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native/Libraries/PushNotificationIOS",
+					"$(SRCROOT)/../ios/Pods/**",
+					"$(SRCROOT)/../node_modules/react-native-callkit/ios/RNCallKit",
+				);
 				INFOPLIST_FILE = RCTWebRTCDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RCTWebRTCDemo.app/RCTWebRTCDemo";
 			};
@@ -894,54 +1150,84 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB9E1A58367AFC430D0E39A7 /* Pods-RCTWebRTCDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RCTWebRTCDemo/RCTWebRTCDemo.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = 5R9E5RQWT9;
+				DEVELOPMENT_TEAM = EJR5WQYFKJ;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-webrtc/ios/**";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-webrtc/ios/**",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-notifications/RNNotifications",
+					"$(SRCROOT)/../ios/Pods/**",
+					"$(SRCROOT)/../node_modules/react-native-callkit/ios/RNCallKit",
 				);
 				INFOPLIST_FILE = RCTWebRTCDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-webrtc/ios/**";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-webrtc/ios/**",
+					"$(SRCROOT)/../ios/Pods/**",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.philikon.RCTWebRTCDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = nam.openweb.RCTWebRTCDemo;
 				PRODUCT_NAME = RCTWebRTCDemo;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59036BE7F7945416EFACDF83 /* Pods-RCTWebRTCDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5R9E5RQWT9;
+				CODE_SIGN_ENTITLEMENTS = RCTWebRTCDemo/RCTWebRTCDemo.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJR5WQYFKJ;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-webrtc/ios/**";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-webrtc/ios/**",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-notifications/RNNotifications",
+					"$(SRCROOT)/../ios/Pods/**",
+					"$(SRCROOT)/../node_modules/react-native-callkit/ios/RNCallKit",
 				);
 				INFOPLIST_FILE = RCTWebRTCDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-webrtc/ios/**";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-webrtc/ios/**",
+					"$(SRCROOT)/../ios/Pods/**",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.philikon.RCTWebRTCDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = nam.openweb.RCTWebRTCDemo;
 				PRODUCT_NAME = RCTWebRTCDemo;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -983,6 +1269,8 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-callkit/ios/RNCallKit",
+					"$(SRCROOT)/../node_modules/react-native-callkit/ios/RNCallKit",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1023,6 +1311,8 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-callkit/ios/RNCallKit",
+					"$(SRCROOT)/../node_modules/react-native-callkit/ios/RNCallKit",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
