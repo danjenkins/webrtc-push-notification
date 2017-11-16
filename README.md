@@ -10,3 +10,6 @@ Enter the same room ID(any word such as hello, yoyo, etc) in two or more devices
 
 ## NOTE
 - Don't run it on iOS simulator, or change to `navigator.getUserMedia({"audio": true, "video": false})` to test audio only.
+
+- To get CallKit and PushKit work together, in node_modules/react-native-notifications/RNNotifications/RNNotificationsBridgeQueue.m, change line
+`self.jsIsReady = YES;` to `self.jsIsReady = NO;`
